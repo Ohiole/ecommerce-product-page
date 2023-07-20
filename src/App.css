@@ -1,38 +1,717 @@
-.App {
-  text-align: center;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Kumbh Sans', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header{
+  width: 100%;
+  padding: 0rem 5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.headerUnder{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid hsl(220, 14%, 75%);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.logoAndMenu{
+  display: flex;
+  gap: 3.5em;
+}
+
+.menubar{
+  display: none;
+  margin-right: 1em;
+  cursor: pointer;
+  z-index: 99;
+}
+
+.navigationLinks{
+  display: flex;
+  list-style-type: none;
+  gap: 3em;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.navigationLinks li{
+  color: hsl(219, 9%, 45%);
+  font-size: 0.875rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  position: relative;
+}
+
+.lineUnder{
+  height: 5px;
+  width: 100%;
+  background-color: hsl(26, 100%, 55%);
+  opacity: 0;
+  position: absolute;
+  bottom: -135%;
+  transition: all .25s ease-in-out;
+}
+
+.navigationLinks li:hover{
+  color: hsl(220, 13%, 13%);
+  transition: all .25s ease-in-out;
+}
+
+.navigationLinks li:hover  .lineUnder{
+  opacity: 1;
+}
+
+.cartAndPicture{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+}
+
+.cartAndNum{
+  display: flex;
+  position: relative;
+}
+
+.numberCount{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15px;
+  width: 20px;
+  background-color: hsl(26, 100%, 55%);
+  border-radius: 9px;
+  position: absolute;
+  left: 50%;
+  bottom: 70%;
+}
+
+.numberCount p{
+  color: hsl(0, 0%, 100%);
+  font-weight: 600;
+  font-size: 0.65rem;
+}
+
+.avatar{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.avatar:hover{
+  border: 3px solid hsl(26, 100%, 55%);
+  transition: border .15s ease-in-out;
+}
+
+.cartImg{
+  cursor: pointer;
+}
+
+.cartImg:hover path{
+  fill: hsl(220, 13%, 13%);
+  transition: all .25s ease-in-out;
+}
+.closeMenu{
+  cursor: pointer;
+  display: none;
+}
+
+main{
+  width: 100%;
+  padding: 2rem 0 0 10rem;
+  display: flex;
+}
+
+.productPic{
+  width: 50%;
+}
+
+.mainImg{
+  width: 500px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.allPics{
+  width: 100%;
+  margin-top: 2rem;
+  display: flex;
+  gap: 1em;
+  padding: 0 2rem;
+}
+
+.thumbnailDiv{
+  width: 113px;
+}
+
+.activeImg{
+  border: 3px solid hsl(26, 100%, 55%);
+  border-radius: 10px;
+}
+
+.activeImg img{
+  opacity: 0.4;
+}
+
+.thumbnailDiv img{
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.thumbnailDiv img:hover{
+  opacity: 0.5;
+  transition: all .3s ease-in-out;
+}
+
+.productInfo{
+  width: 50%;
+  margin-top: 4rem;
+}
+
+.infoHead h4{
+  color: hsl(26, 100%, 55%);
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+}
+
+.infoHead h1{
+  width: 70%;
+  margin-top: 1rem;
+  font-size: 2.5rem;
+}
+
+.mainText{
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.mainText p{
+  color: hsl(219, 9%, 45%);
+  font-size: 0.875rem;
+  width: 70%;
+  line-height: 1.6;
+}
+
+.priceText{
+  margin-top: 1.5rem;
+}
+
+.percentageAndPrice{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.percentageAndPrice span{
+  background-color: hsl(25, 100%, 94%);
+  padding: 0.35rem 0.6rem;
+  font-size: 0.65rem;
+  border-radius: 5px;
+  font-weight: 700;
+  color: hsl(26, 100%, 55%);
+}
+
+.priceText p{
+  color: hsl(220, 14%, 75%);
+  font-size: 0.75rem;
+  text-decoration: line-through;
+  font-weight: 500;
+}
+
+.cartAndButton{
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1em;
+  width: 70%;
+}
+
+.counter{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: hsl(223, 64%, 98%);
+  padding: 0.5rem;
+  width: 35%;
+  border-radius: 5px;
+}
+
+.counter .minus{
+  width: 10px;
+  height: 3.5px;
+  cursor: pointer;
+}
+
+.counter .plus{
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+}
+
+.quantity{
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.cartBtn{
+  width: 65%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  background-color: hsl(26, 100%, 55%);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 8px 8px 2px hsl(25, 100%, 94%);
+  height: 35px;
+  cursor: pointer;
+  color: hsl(0, 0%, 100%);
+  font-weight: 600;
+}
+
+.cartBtn:hover{
+  background-color: hsl(26, 97%, 66%);
+  transition: all .25s ease-in-out;
+}
+
+.cartBtn img{
+  width: 15px;
+  
+}
+.dialogBox{
+  width: 280px;
+  height: 185px;
+  border: none;
+  box-shadow: -3px 7px 10px 2px hsl(0, 0%, 84%), 3px 0 10px 1px hsl(0, 0%, 84%);
+  border-radius: 10px;
+  position: absolute;
+  top: 80%;
+  right: 5%;
+  z-index: 99;
+  background-color: hsl(0, 0%, 100%);
+  cursor: pointer;
+  transition: all 0.5s ease-in-out ;
+}
+
+.dialogBox h2{
+  font-size: 1rem;
+  border-bottom: 1px solid hsl(220, 14%, 75%);
+  padding: 1rem;
+  height: 25%;
+}
+
+.checkout{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 75%;
+}
+
+.checkout .emptyMsg{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: .875rem;
+  font-weight: 600;
+  color: hsl(219, 9%, 45%);
+}
+
+.checkoutFull{
+  width: 100%;
+  height: 100%;
+  padding: 1rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.checkoutText{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkoutText .mainPicForCheck{
+  width: 40px;
+  border-radius: 5px;
+}
+
+.mainCheckText .checkName{
+  font-size: 0.85rem;
+  color: hsl(219, 9%, 45%);
+}
+
+.mainCheckText .countCash{
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-top: 0.15rem;
+}
+
+.mainCheckText .countCash .checkCost{
+  font-size: 0.85rem;
+  color: hsl(219, 9%, 45%);
+}
+
+.mainCheckText .countCash span{
+  font-weight: 600;
+  color: hsl(220, 13%, 13%);
+  font-size: 0.85rem;
+}
+
+.checkoutFull .checkBtn{
+  width: 100%;
+  border: none;
+  height: 40px;
+  border-radius: 8px;
+  background-color: hsl(26, 100%, 55%);
+  color: hsl(0, 0%, 100%);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.checkoutFull .checkBtn:hover{
+  background-color: hsl(26, 97%, 66%);
+  transition: all .25s ease-in-out;
+}
+
+.imageBox{
+  width: 100%;
+  min-height: 100%;
+  background: rgba(0,0,0,0.5);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 1em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.exitBtn path:hover{
+  fill: hsl(26, 100%, 55%);
+  transition: all .25s ease-in-out;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.exitBtn{
+  display: flex;
+  cursor: pointer;
+  position: absolute;
+  top: 5%;
+  right: 33%;
+}
+
+.imageBoxMain{
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.leftArrow, .rightArrow{
+  height: 50px;
+  width: 50px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.leftArrow:hover path, .rightArrow:hover path{
+  stroke: hsl(26, 100%, 55%);
+  transition: all .25 ease-in-out;
+}
+
+.leftArrow{
+  position: absolute;
+  left: -5%;
+}
+
+.rightArrow{
+  position: absolute;
+  right: -5%;
+}
+
+.imageBoxMain .mainBgImage{
+  width: 550px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.imageBoxThumbnails{
+  display: flex;
+  gap: 1em;
+}
+
+.thumbnailDivBox{
+  width: 90px;
+}
+
+.thumbnailDivBox.activeImg{
+  background-color: rgba(255,255,255,0.8);
+}
+
+.thumbnailDivBox img{
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.thumbnailDivBox img:hover{
+  opacity: 0.4;
+  transition: all .25s ease-in-out;
+}
+
+.mainPicShow{
+  display: flex;
+  align-items: center;
+}
+
+.leftArrowMain, .rightArrowMain{
+  height: 35px;
+  width: 35px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  display: none;
+}
+
+.leftArrowMain:hover path, .rightArrowMain:hover path{
+  stroke: hsl(26, 100%, 55%);
+  transition: all .25 ease-in-out;
+}
+
+.leftArrowMain{
+  position: absolute;
+  left: 3%;
+}
+
+.rightArrowMain{
+  position: absolute;
+  right: 3%;
+}
+
+@media screen and (max-width: 1185px){
+  main{
+    padding: 2rem 5rem;
+    gap: 3rem;
   }
-  to {
-    transform: rotate(360deg);
+  .productInfo{
+    width: 100%;
+  }
+  
+}
+
+@media screen and (max-width: 1110px){
+  header{
+    padding: 0;
+  } 
+  .headerUnder{
+    padding: 1rem;
+  }
+  main{
+    padding: 2rem;
+  }
+  .lineUnder{
+    bottom: -100%;
+    transition: all .25s ease-in-out;
+  }
+}
+
+@media screen and (max-width: 985px){
+  .mainImg{
+    width: 100%;
+  }
+  .productInfo{
+    width: 100%;
+    margin-top: 0;
+  }
+  .infoHead h1{
+    width: 100%;
+    margin-top: 0.5rem;
+    font-size: 1.85rem;
+  }
+  .mainText{
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .mainText p{
+    color: hsl(219, 9%, 45%);
+    font-size: 0.8rem;
+    width: 100%;
+    line-height: 1.6;
+  }
+
+  .priceText{
+    margin-top: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 780px){ 
+  .navigationLinks{
+    flex-direction: column;
+    gap: 0;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: 100vh;
+    z-index: 99;
+    width: 60%;
+    background-color: hsl(0, 0%, 100%);
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 3rem 2rem;
+    gap: 1em;
+    display: none;
+    transition: all .3s ease-in-out;
+  }
+  .navigationLinks.active{
+    display: flex;
+  }
+  .navigationLinks::after{
+    content: "";
+    position: fixed;
+    width: 40%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    right: 0;
+    top: 0;
+    z-index: 0;
+  }
+  .navigationLinks li{
+    height: unset;
+    color: hsl(220, 13%, 13%);
+    font-weight: 700;
+    font-size: 1rem;
+  }
+  .navigationLinks li:hover{
+    color: hsl(219, 9%, 45%);
+    transition: all .25s ease-in-out;
+  }
+  .lineUnder{
+    display: none;
+  }
+  .menubar{
+    display: inline-block;
+    z-index: 99;
+  }
+  .closeMenu.active{
+    display: flex;
+    transition: all .3s ease-in-out;
+  }
+  .cartAndButton{
+    width: 250px;
+  }
+  .counter{
+    width: 100px;
+  }
+}
+
+@media screen and (max-width: 615px){
+  .imageBox{
+    display: none;
+  }
+  main{
+    padding: 0;
+    gap: 1rem;
+    flex-direction: column;
+  }
+  .mainImg{
+    width: 100%;
+    border-radius: 0;
+  }
+  .productPic{
+    width: 100%;
+  }
+  .leftArrowMain, .rightArrowMain{
+    display: flex;
+  }
+  .allPics{
+    display: none;
+  }
+  .productInfo{
+    width: 100%;
+    padding: 0 1rem;
+  }
+  .priceText{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.75rem;
+  }
+  .cartAndButton{
+    margin-top: 1rem;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  .counter{
+    width: 100%;
+    padding: 0 1.5rem;
+    height: 40px;
+    border-radius: 10px;
+  }
+  .cartBtn{
+    width: 100%;
+    box-shadow: 5px 10px 15px 5px hsl(25, 100%, 94%);
+    height: 45px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .dialogBox{
+    width: 90%;
+    box-shadow: unset;
+    top: 110%;
+    right: unset;
+    left: 5%;
+  }
+  .dialogBox h2{
+    font-size: 0.75rem;
+  }
+  .mainCheckText .checkName{
+    font-size: 0.85rem;
+  }
+  .mainCheckText .countCash .checkCost{
+    font-size: 0.85rem;
+  }
+  .mainCheckText .countCash span{
+    font-size: .85rem;
+  }
+  .checkoutText{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 360px){
+  .headerUnder{
+    padding: 1rem;
+  }
+  .compLogo{
+    width: 70%;
   }
 }
