@@ -146,11 +146,11 @@ main{
   margin-top: 2rem;
   display: flex;
   gap: 1em;
-  padding: 0 2rem;
+  padding: 0 1rem;
 }
 
 .thumbnailDiv{
-  width: 113px;
+  width: 100px;
 }
 
 .activeImg{
@@ -295,7 +295,7 @@ main{
   box-shadow: -3px 7px 10px 2px hsl(0, 0%, 84%), 3px 0 10px 1px hsl(0, 0%, 84%);
   border-radius: 10px;
   position: absolute;
-  top: 80%;
+  top: 10%;
   right: 5%;
   z-index: 99;
   background-color: hsl(0, 0%, 100%);
@@ -683,7 +683,7 @@ main{
   .dialogBox{
     width: 90%;
     box-shadow: unset;
-    top: 110%;
+    top: 10%;
     right: unset;
     left: 5%;
   }

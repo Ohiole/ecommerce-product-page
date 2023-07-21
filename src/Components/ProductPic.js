@@ -16,31 +16,31 @@ function ProductPic({setShowImg}) {
   let [currentPic, setCurrentPic] = useState(1);
 
   function imgTwo () {
-    setMainPic('thumbnailDivBox activeImg');
-    setMainPicOne('thumbnailDivBox');
-    setMainPicTwo('thumbnailDivBox');
-    setDefaultPic('thumbnailDivBox');
+    setMainPic('thumbnailDiv activeImg');
+    setMainPicOne('thumbnailDiv');
+    setMainPicTwo('thumbnailDiv');
+    setDefaultPic('thumbnailDiv');
   }
 
   function imgThree() {
-    setMainPic('thumbnailDivBox');
-    setMainPicOne('thumbnailDivBox activeImg');
-    setMainPicTwo('thumbnailDivBox');
-    setDefaultPic('thumbnailDivBox');
+    setMainPic('thumbnailDiv');
+    setMainPicOne('thumbnailDiv activeImg');
+    setMainPicTwo('thumbnailDiv');
+    setDefaultPic('thumbnailDiv');
   }
 
   function imgFour(){
-    setMainPic('thumbnailDivBox');
-    setMainPicOne('thumbnailDivBox');
-    setMainPicTwo('thumbnailDivBox activeImg');
-    setDefaultPic('thumbnailDivBox');
+    setMainPic('thumbnailDiv');
+    setMainPicOne('thumbnailDiv');
+    setMainPicTwo('thumbnailDiv activeImg');
+    setDefaultPic('thumbnailDiv');
   }
 
   function imgOne(){
-    setMainPic('thumbnailDivBox');
-    setMainPicOne('thumbnailDivBox');
-    setMainPicTwo('thumbnailDivBox');
-    setDefaultPic('thumbnailDivBox activeImg');
+    setMainPic('thumbnailDiv');
+    setMainPicOne('thumbnailDiv');
+    setMainPicTwo('thumbnailDiv');
+    setDefaultPic('thumbnailDiv activeImg');
   }
 
   function clickImg(){
