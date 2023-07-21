@@ -35,7 +35,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: (https://github.com/Ohiole/ecommerce-product-page)
-- Live Site URL: (https://your-live-site-url.com)](https://ohiole.github.io/ecommerce-product-page)
+- Live Site URL: (https://ohiole.github.io/ecommerce-product-page)
 
 ## My process
 
